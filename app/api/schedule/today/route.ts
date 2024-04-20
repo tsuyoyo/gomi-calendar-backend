@@ -1,12 +1,8 @@
-import { NextRequest, NextResponse } from "next/server";
-import { calendarSource } from "../../data/datasource";
+import { NextRequest, NextResponse } from 'next/server';
+import { calendarSource } from '../../data/dataSource';
 
 export function GET(request: NextRequest): NextResponse {
-    console.log('loading calendar'); 
-    const d = calendarSource;
-    console.log('loaded calendar');
-    return NextResponse.json(
-        { message: `aaaaaaa` },
-        { status: 200 },
-      );
+  const d = calendarSource;
+
+  return NextResponse.json({ message: `aaaaaaa` }, { status: 200 });
 }
