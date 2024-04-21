@@ -16,9 +16,13 @@ type TrashSchedule = {
   days: Week[];
 };
 
-export type CalendarEntry = {
+export type Area = {
   id: string;
-  area: string;
+  name: string;
+};
+
+export type CalendarEntry = {
+  area: Area;
   burnable: TrashSchedule;
   incombustible: TrashSchedule;
   recyclable: TrashSchedule;

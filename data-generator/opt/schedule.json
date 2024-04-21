@@ -1,7 +1,9 @@
 [
   {
-    "id": "d08ef1e0ad191d9699f856e5c9144a96",
-    "area": "秋津",
+    "area": {
+      "id": "d08ef1e0ad191d9699f856e5c9144a96",
+      "name": "秋津"
+    },
     "burnable": {
       "days": [1, 3, 5]
     },
@@ -19,8 +21,10 @@
     "calendar": "https://www.city.narashino.lg.jp/material/files/group/35/R6calendar_akitsu0301.pdf"
   },
   {
-    "id": "027b419f7eff8882ad395d42bc6be128",
-    "area": "泉町",
+    "area": {
+      "id": "027b419f7eff8882ad395d42bc6be128",
+      "name": "泉町"
+    },
     "burnable": {
       "days": [2, 4, 6]
     },
@@ -38,8 +42,10 @@
     "calendar": "https://www.city.narashino.lg.jp/material/files/group/35/R6calendar_izumicyou0301.pdf"
   },
   {
-    "id": "09651482a0ef21b5ba1bbc6181e6c4db",
-    "area": "大久保1丁目・2丁目",
+    "area": {
+      "id": "09651482a0ef21b5ba1bbc6181e6c4db",
+      "name": "大久保1丁目・2丁目"
+    },
     "burnable": {
       "days": [2, 4, 6]
     },
@@ -57,8 +63,10 @@
     "calendar": "https://www.city.narashino.lg.jp/material/files/group/35/R6calendar_ookubo120301.pdf"
   },
   {
-    "id": "efd2545edc61dcbc36acf4168bbbedb8",
-    "area": "大久保3丁目・4丁目",
+    "area": {
+      "id": "efd2545edc61dcbc36acf4168bbbedb8",
+      "name": "大久保3丁目・4丁目"
+    },
     "burnable": {
       "days": [2, 4, 6]
     },
@@ -76,8 +84,10 @@
     "calendar": "https://www.city.narashino.lg.jp/material/files/group/35/R6calendar_ookubo340301.pdf"
   },
   {
-    "id": "ead51c15de1355fa74bd5558d590156e",
-    "area": "香澄",
+    "area": {
+      "id": "ead51c15de1355fa74bd5558d590156e",
+      "name": "香澄"
+    },
     "burnable": {
       "days": [1, 3, 5]
     },
@@ -95,8 +105,10 @@
     "calendar": "https://www.city.narashino.lg.jp/material/files/group/35/R6calendar_kasumi0301.pdf"
   },
   {
-    "id": "fcb78410805de36827a7fb07b0da8090",
-    "area": "奏の杜",
+    "area": {
+      "id": "fcb78410805de36827a7fb07b0da8090",
+      "name": "奏の杜"
+    },
     "burnable": {
       "days": [1, 3, 5]
     },
@@ -114,8 +126,10 @@
     "calendar": "https://www.city.narashino.lg.jp/material/files/group/35/R6calendar_kanadenomori0301.pdf"
   },
   {
-    "id": "18967cecaed65b14dcb355dda7d9d738",
-    "area": "鷺沼",
+    "area": {
+      "id": "18967cecaed65b14dcb355dda7d9d738",
+      "name": "鷺沼"
+    },
     "burnable": {
       "days": [1, 3, 5]
     },
@@ -133,8 +147,10 @@
     "calendar": "https://www.city.narashino.lg.jp/material/files/group/35/R6calendar_saginuma0301.pdf"
   },
   {
-    "id": "60a40d5351c754cf8a66f184b7839184",
-    "area": "鷺沼台",
+    "area": {
+      "id": "60a40d5351c754cf8a66f184b7839184",
+      "name": "鷺沼台"
+    },
     "burnable": {
       "days": [2, 4, 6]
     },
@@ -152,8 +168,10 @@
     "calendar": "https://www.city.narashino.lg.jp/material/files/group/35/R6calendar_saginumadai0301.pdf"
   },
   {
-    "id": "7cc83bb0b869f6aa17afb508bb31d4b3",
-    "area": "新栄",
+    "area": {
+      "id": "7cc83bb0b869f6aa17afb508bb31d4b3",
+      "name": "新栄"
+    },
     "burnable": {
       "days": [2, 4, 6]
     },
@@ -171,8 +189,10 @@
     "calendar": "https://www.city.narashino.lg.jp/material/files/group/35/R6calendar_sinei0301.pdf"
   },
   {
-    "id": "90599560529c4e7375817559223113c7",
-    "area": "袖ケ浦",
+    "area": {
+      "id": "90599560529c4e7375817559223113c7",
+      "name": "袖ケ浦"
+    },
     "burnable": {
       "days": [1, 3, 5]
     },
@@ -190,8 +210,10 @@
     "calendar": "https://www.city.narashino.lg.jp/material/files/group/35/R6calendar_sodegaura0301.pdf"
   },
   {
-    "id": "fcbdae0d66da4ac5b88e0a74ca543e55",
-    "area": "津田沼1丁目・2丁目・3丁目",
+    "area": {
+      "id": "fcbdae0d66da4ac5b88e0a74ca543e55",
+      "name": "津田沼1丁目・2丁目・3丁目"
+    },
     "burnable": {
       "days": [1, 3, 5]
     },
@@ -209,8 +231,10 @@
     "calendar": "https://www.city.narashino.lg.jp/material/files/group/35/R6calendar_tsudanuma1230301.pdf"
   },
   {
-    "id": "429c3a649618218c87b7483113deb21b",
-    "area": "津田沼4丁目・5丁目・6丁目・7丁目",
+    "area": {
+      "id": "429c3a649618218c87b7483113deb21b",
+      "name": "津田沼4丁目・5丁目・6丁目・7丁目"
+    },
     "burnable": {
       "days": [1, 3, 5]
     },
@@ -228,8 +252,10 @@
     "calendar": "https://www.city.narashino.lg.jp/material/files/group/35/R6calendar_tsudanuma45670301.pdf"
   },
   {
-    "id": "f9c90b5602104ff5e209a1c69fc5ba01",
-    "area": "花咲",
+    "area": {
+      "id": "f9c90b5602104ff5e209a1c69fc5ba01",
+      "name": "花咲"
+    },
     "burnable": {
       "days": [2, 4, 6]
     },
@@ -247,8 +273,10 @@
     "calendar": "https://www.city.narashino.lg.jp/material/files/group/35/R6calendar_hanasaki0301.pdf"
   },
   {
-    "id": "d8c36efaec7849209a39a0d75538b11b",
-    "area": "東習志野1丁目・2丁目・3丁目",
+    "area": {
+      "id": "d8c36efaec7849209a39a0d75538b11b",
+      "name": "東習志野1丁目・2丁目・3丁目"
+    },
     "burnable": {
       "days": [2, 4, 6]
     },
@@ -266,8 +294,10 @@
     "calendar": "https://www.city.narashino.lg.jp/material/files/group/35/R6calendar_higashinarashino1230301.pdf"
   },
   {
-    "id": "394d2d76f346430b405695fcf8c3a180",
-    "area": "東習志野4丁目・5丁目・6丁目・7丁目・8丁目",
+    "area": {
+      "id": "394d2d76f346430b405695fcf8c3a180",
+      "name": "東習志野4丁目・5丁目・6丁目・7丁目・8丁目"
+    },
     "burnable": {
       "days": [2, 4, 6]
     },
@@ -285,8 +315,10 @@
     "calendar": "https://www.city.narashino.lg.jp/material/files/group/35/R6calendar_higashinarashino456780301.pdf"
   },
   {
-    "id": "b9c9ae200e45fb17404b5e5135a70285",
-    "area": "藤崎",
+    "area": {
+      "id": "b9c9ae200e45fb17404b5e5135a70285",
+      "name": "藤崎"
+    },
     "burnable": {
       "days": [1, 3, 5]
     },
@@ -304,8 +336,10 @@
     "calendar": "https://www.city.narashino.lg.jp/material/files/group/35/R6calendar_hujisaki0301.pdf"
   },
   {
-    "id": "114dec25a47e09e52449b1ecd376bc2b",
-    "area": "実籾",
+    "area": {
+      "id": "114dec25a47e09e52449b1ecd376bc2b",
+      "name": "実籾"
+    },
     "burnable": {
       "days": [2, 4, 6]
     },
@@ -323,8 +357,10 @@
     "calendar": "https://www.city.narashino.lg.jp/material/files/group/35/R6calendar_mimomi0301.pdf"
   },
   {
-    "id": "056741eacfc9db26f30da59cebcd6e04",
-    "area": "実籾本郷",
+    "area": {
+      "id": "056741eacfc9db26f30da59cebcd6e04",
+      "name": "実籾本郷"
+    },
     "burnable": {
       "days": [2, 4, 6]
     },
@@ -342,8 +378,10 @@
     "calendar": "https://www.city.narashino.lg.jp/material/files/group/35/R6calendar_mimomihongou0301.pdf"
   },
   {
-    "id": "705250a8782efa2eb885507c8a6e8be3",
-    "area": "本大久保",
+    "area": {
+      "id": "705250a8782efa2eb885507c8a6e8be3",
+      "name": "本大久保"
+    },
     "burnable": {
       "days": [2, 4, 6]
     },
@@ -361,8 +399,10 @@
     "calendar": "https://www.city.narashino.lg.jp/material/files/group/35/R6calendar_motoookubo0301.pdf"
   },
   {
-    "id": "9f3c94c06697d3e3df0bafff3cb70d01",
-    "area": "屋敷",
+    "area": {
+      "id": "9f3c94c06697d3e3df0bafff3cb70d01",
+      "name": "屋敷"
+    },
     "burnable": {
       "days": [2, 4, 6]
     },
@@ -380,8 +420,10 @@
     "calendar": "https://www.city.narashino.lg.jp/material/files/group/35/R6calendar_yashiki0301.pdf"
   },
   {
-    "id": "a1385b8472bd4fe0b59182f6742f6828",
-    "area": "谷津1丁目・2丁目・3丁目・4丁目・7丁目",
+    "area": {
+      "id": "a1385b8472bd4fe0b59182f6742f6828",
+      "name": "谷津1丁目・2丁目・3丁目・4丁目・7丁目"
+    },
     "burnable": {
       "days": [1, 3, 5]
     },
@@ -399,8 +441,10 @@
     "calendar": "https://www.city.narashino.lg.jp/material/files/group/35/R6calendar_yatsu123470301.pdf"
   },
   {
-    "id": "4a632e38071490d19a0673ef35b0acb1",
-    "area": "谷津5丁目・6丁目",
+    "area": {
+      "id": "4a632e38071490d19a0673ef35b0acb1",
+      "name": "谷津5丁目・6丁目"
+    },
     "burnable": {
       "days": [1, 3, 5]
     },
@@ -418,8 +462,10 @@
     "calendar": "https://www.city.narashino.lg.jp/material/files/group/35/R6calendar_yatsu560301.pdf"
   },
   {
-    "id": "6cb6bd5ffe8640c7a6c32481520277bb",
-    "area": "谷津町",
+    "area": {
+      "id": "6cb6bd5ffe8640c7a6c32481520277bb",
+      "name": "谷津町"
+    },
     "burnable": {
       "days": [1, 3, 5]
     },

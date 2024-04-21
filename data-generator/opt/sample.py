@@ -75,8 +75,10 @@ def main():
   for index, row in df.iterrows():
     areaName = df.at[index, keys['area']]
     schedule = {
-      "id": hashlib.md5(areaName.encode('utf-8')).hexdigest(),
-      "area": areaName,
+      "area": {
+        "id": hashlib.md5(areaName.encode('utf-8')).hexdigest(),
+        "name": areaName,
+      },
       "burnable": parseSchedule(df.at[index, keys['burnable']]),
       "incombustible": parseSchedule(df.at[index, keys['incombustible']]),
       "recyclable": parseSchedule(df.at[index, keys['recyclable']]),

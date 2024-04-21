@@ -1,5 +1,6 @@
+// 全エリアのスケジュールを返す
 import { NextRequest, NextResponse } from 'next/server';
-import { calendarSource } from '../../data/dataSource';
+import { calendarSource } from '../data/dataSource';
 
 export function GET(request: NextRequest): NextResponse {
   const d = calendarSource;
