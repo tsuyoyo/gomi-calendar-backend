@@ -3,7 +3,7 @@ import type {
   TrashSchedule,
 } from '../../../data/CalendarEntry';
 import { TrashType } from '../../../data/TrashType';
-import { getNthWeekdayInTheMonth } from '../getNthWeekdayInMonth';
+import { getNthWeekdayInTheMonth } from './getNthWeekdayInMonth';
 
 const isTrashCollectable = (schedule: TrashSchedule, date: Date) => {
   const day = date.getDay();

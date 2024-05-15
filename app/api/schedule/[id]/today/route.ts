@@ -1,3 +1,4 @@
+import { buildResponseTrashTypeData } from '../../../data/TrashType';
 import { getCalendarSource } from '../../../data/dataSource';
 import { getDateInJst } from '../../../date/getDateInJst';
 import { getTrashCollectionTypes } from './getTrashCollectionTypes';
@@ -23,6 +24,6 @@ export async function GET(
       today.getFullYear(),
       today.getMonth() + 1,
       today.getDate(),
-    ),
+    ).map((t) => buildResponseTrashTypeData(t)),
   });
 }

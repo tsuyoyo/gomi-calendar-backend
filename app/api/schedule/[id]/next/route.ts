@@ -1,5 +1,9 @@
-import { TrashType } from '../../../data/TrashType';
+import {
+  TrashType,
+  buildResponseTrashTypeData,
+} from '../../../data/TrashType';
 import { getCalendarSource } from '../../../data/dataSource';
+import { buildResponseDateData } from '../../../date/buildResponseDateData';
 import { getDateInJst } from '../../../date/getDateInJst';
 import { getNextDayForType } from './[type]/getNextDayForType';
 
@@ -27,8 +31,9 @@ export async function GET(
         today.getDate(),
       );
       return {
-        type,
-        nextDay: nextDay !== null ? nextDay : null,
+        type: buildResponseTrashTypeData(type),
+        nextDay:
+          nextDay !== null ? buildResponseDateData(nextDay) : null,
       };
     }),
   });

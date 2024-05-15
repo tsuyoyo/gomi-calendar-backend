@@ -1,4 +1,4 @@
-import { getDateInJst } from '../../date/getDateInJst';
+import { getDateInJst } from '../../../date/getDateInJst';
 
 export const getNthWeekdayInThisMonth = (dateInMonth: number) => {
   const today = getDateInJst();

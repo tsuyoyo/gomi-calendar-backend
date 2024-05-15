@@ -1,7 +1,7 @@
 import { CalendarEntry } from '../../../../data/CalendarEntry';
 import { TrashType } from '../../../../data/TrashType';
 import { getDateInJst } from '../../../../date/getDateInJst';
-import { getTrashCollectionTypes } from '../../../today/[id]/getTrashCollectionTypes';
+import { getTrashCollectionTypes } from '../../today/getTrashCollectionTypes';
 
 export const getNextDayForType = (
   calendar: CalendarEntry,

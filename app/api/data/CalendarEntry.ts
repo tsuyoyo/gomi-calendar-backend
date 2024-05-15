@@ -1,12 +1,5 @@
-enum Week {
-  Sunday = 0,
-  Monday = 1,
-  Tuesday = 2,
-  Wednesday = 3,
-  Thursday = 4,
-  Friday = 5,
-  Saturday = 6,
-}
+import { TrashTypeDisplayInfo } from './TrashType';
+import { Week } from './Week';
 
 export type TrashSchedule = {
   // 0 origin. Empty -> every week.
@@ -14,6 +7,12 @@ export type TrashSchedule = {
 
   // It should have one ore more values.
   days: Week[];
+
+  // Formatted text to be shown on the frontend side.
+  displayInfo?: {
+    type: TrashTypeDisplayInfo;
+    schedule: string;
+  };
 };
 
 export type Area = {
