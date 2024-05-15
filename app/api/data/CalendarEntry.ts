@@ -8,9 +8,9 @@ enum Week {
   Saturday = 6,
 }
 
-type TrashSchedule = {
+export type TrashSchedule = {
   // 0 origin. Empty -> every week.
-  weeks: number[];
+  weeks: number[] | undefined;
 
   // It should have one ore more values.
   days: Week[];

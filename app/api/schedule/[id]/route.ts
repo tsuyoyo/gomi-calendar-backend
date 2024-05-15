@@ -1,8 +1,16 @@
-// 特定のエリアのスケジュールを返す
-import { NextRequest, NextResponse } from 'next/server';
+import { calendarSource } from '../../data/dataSource';
+
 export async function GET(
-  request: NextRequest,
+  _request: Request,
   { params }: { params: { id: string } },
 ) {
-  return NextResponse.json({ id: params.id }, { status: 200 });
+  const schedule = calendarSource.find(
+    (c) => c.area.id === params.id,
+  );
+  if (schedule === undefined) {
+    return new Response(`Invalid area ID - ${params.id}`, {
+      status: 403,
+    });
+  }
+  return Response.json(schedule);
 }
