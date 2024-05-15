@@ -1,10 +1,10 @@
-import { calendarSource } from '../../data/dataSource';
+import { getCalendarSource } from '../../data/dataSource';
 
 export async function GET(
   _request: Request,
   { params }: { params: { id: string } },
 ) {
-  const schedule = calendarSource.find(
+  const schedule = getCalendarSource().find(
     (c) => c.area.id === params.id,
   );
   if (schedule === undefined) {

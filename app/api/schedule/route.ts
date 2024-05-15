@@ -1,5 +1,5 @@
-import { calendarSource } from '../data/dataSource';
+import { getCalendarSource } from '../data/dataSource';
 
 export function GET(_request: Request) {
-  return Response.json(calendarSource);
+  return Response.json(getCalendarSource());
 }

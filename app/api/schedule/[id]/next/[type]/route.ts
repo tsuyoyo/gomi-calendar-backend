@@ -1,10 +1,6 @@
-import {
-  TrashType,
-  fromTrashTypeString,
-} from '../../../../data/TrashType';
-import { calendarSource } from '../../../../data/dataSource';
+import { fromTrashTypeString } from '../../../../data/TrashType';
+import { getCalendarSource } from '../../../../data/dataSource';
 import { getDateInJst } from '../../../../date/getDateInJst';
-import { toJst } from '../../../../date/toJst';
 import { getNextDayForType } from './getNextDayForType';
 
 export async function GET(
@@ -17,7 +13,7 @@ export async function GET(
       status: 403,
     });
   }
-  const schedule = calendarSource.find(
+  const schedule = getCalendarSource().find(
     (c) => c.area.id === params.id,
   );
   if (schedule === undefined) {
