@@ -1,13 +1,16 @@
 import { TrashType } from '../data/TrashType';
 
-const REF_BASE =
-  'https://www.city.narashino.lg.jp/material/files/group/35';
+const DOMAIN = 'https://www.city.narashino.lg.jp';
+const REF_BASE = `${DOMAIN}/material/files/group/35`;
+const KURASHI_GOMI_BASE = `${DOMAIN}/kurashi/gomi`;
 
 export const refLinks = {
   burnable: `${REF_BASE}/R6dashikataguidebook_02.pdf`,
   incombustible: `${REF_BASE}/R6dashikataguidebook_03.pdf`,
   recyclable: `${REF_BASE}/R6dashikataguidebook_04.pdf`,
   harmful: `${REF_BASE}/R6dashikataguidebook_05.pdf`,
+  narashinoCityTop: `${DOMAIN}/index.html`,
+  gomiTop: `${KURASHI_GOMI_BASE}/index.html`,
 };
 
 export const getLinkByTrashType = (type: TrashType) => {
