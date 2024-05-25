@@ -6,6 +6,7 @@ import {
 } from '../../../data/TrashType';
 import { getCalendarSource } from '../../../data/dataSource';
 import { LinkComponent } from '../../../data/screen/common/LinkComponent';
+import { HomeAreaDateComponent } from '../../../data/screen/home/HomeAreaDateComponent';
 import { HomeComponentType } from '../../../data/screen/home/HomeComponentType';
 import { HomeNextComponent } from '../../../data/screen/home/HomeNextComponent';
 import { HomeResponse } from '../../../data/screen/home/HomeResponse';
@@ -88,11 +89,16 @@ const buildHomeNextComponent = (
 const buildHomeResponse = (
   areaCalendar: CalendarEntry,
 ): HomeResponse => {
+  const today = getDateInJst();
+  const areaDateComponent: HomeAreaDateComponent = {
+    area: areaCalendar.area.name,
+    date: `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()}`,
+  };
   const todayComponent = buildHomeTodayComponent(areaCalendar);
   const nextComponent = buildHomeNextComponent(areaCalendar);
   const links: LinkComponent[] = [
     {
-      title: '令和6年度「家庭ごみの分け方・出し方」冊子',
+      title: '令和6年度「家庭ごみの分け方・出し方」',
       description:
         '毎年市内全世帯を対象に、自宅のポストに配布されているものと同じです',
       url: 'https://www.city.narashino.lg.jp/kurashi/gomi/gomi/reiwa6nendosassi.html',
@@ -104,11 +110,13 @@ const buildHomeResponse = (
   ];
   return {
     layout: [
+      { type: HomeComponentType.AREA_DATE, index: 0 },
       { type: HomeComponentType.SCHEDULE_TODAY, index: 0 },
       { type: HomeComponentType.SCHEDULE_NEXT, index: 0 },
       { type: HomeComponentType.LINK, index: 0 },
       { type: HomeComponentType.LINK, index: 1 },
     ],
+    areaDateComponent: [areaDateComponent],
     todayComponents: [todayComponent],
     nextComponents: [nextComponent],
     links,
