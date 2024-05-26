@@ -2,6 +2,7 @@ import { link } from 'fs';
 import { CalendarEntry } from '../../../data/CalendarEntry';
 import {
   TrashType,
+  TrashTypeDisplayInfo,
   buildResponseTrashTypeData,
 } from '../../../data/TrashType';
 import { getCalendarSource } from '../../../data/dataSource';
@@ -11,6 +12,10 @@ import { HomeComponentType } from '../../../data/screen/home/HomeComponentType';
 import { HomeNextComponent } from '../../../data/screen/home/HomeNextComponent';
 import { HomeResponse } from '../../../data/screen/home/HomeResponse';
 import { HomeTodayComponent } from '../../../data/screen/home/HomeTodayComponent';
+import {
+  HomeWeeklyScheduleComponent,
+  HomeWeeklyScheduleTrashTypeInfo,
+} from '../../../data/screen/home/HomeWeeklyScheduleComponent';
 import { buildResponseDateData } from '../../../date/buildResponseDateData';
 import { getDateInJst } from '../../../date/getDateInJst';
 import { getNextDayForType } from '../../../schedule/[id]/next/[type]/getNextDayForType';
@@ -86,6 +91,58 @@ const buildHomeNextComponent = (
   };
 };
 
+const buildWeeklyScheduleComponent = (
+  areaCalendar: CalendarEntry,
+): HomeWeeklyScheduleComponent => {
+  const buildTypeSchedule = (
+    type: TrashType,
+    displayInfo?: {
+      type: TrashTypeDisplayInfo;
+      schedule: string;
+    },
+  ): HomeWeeklyScheduleTrashTypeInfo | undefined => {
+    return (
+      displayInfo && {
+        type,
+        name: displayInfo.type.displayName,
+        schedule: displayInfo.schedule,
+      }
+    );
+  };
+
+  const schedules: HomeWeeklyScheduleTrashTypeInfo[] = [
+    buildTypeSchedule(
+      TrashType.BURNABLE,
+      areaCalendar.burnable.displayInfo,
+    ),
+    buildTypeSchedule(
+      TrashType.INCOMBUSTIBLE,
+      areaCalendar.incombustible.displayInfo,
+    ),
+    buildTypeSchedule(
+      TrashType.RECYCLABLE,
+      areaCalendar.recyclable.displayInfo,
+    ),
+    buildTypeSchedule(
+      TrashType.HARMFUL,
+      areaCalendar.harmful.displayInfo,
+    ),
+  ].filter(
+    (s) => s !== undefined,
+  ) as HomeWeeklyScheduleTrashTypeInfo[];
+
+  return {
+    title: 'ゴミ回収スケジュール',
+    description:
+      '祝日は変更になる可能性があります。カレンダーで確認してください。',
+    calendarLink: {
+      title: 'カレンダーを開く',
+      url: areaCalendar.calendar,
+    },
+    schedules,
+  };
+};
+
 const buildHomeResponse = (
   areaCalendar: CalendarEntry,
 ): HomeResponse => {
@@ -96,6 +153,8 @@ const buildHomeResponse = (
   };
   const todayComponent = buildHomeTodayComponent(areaCalendar);
   const nextComponent = buildHomeNextComponent(areaCalendar);
+  const weeklyScheduleComponents =
+    buildWeeklyScheduleComponent(areaCalendar);
   const links: LinkComponent[] = [
     {
       title: '令和6年度「家庭ごみの分け方・出し方」',
@@ -113,11 +172,13 @@ const buildHomeResponse = (
       { type: HomeComponentType.AREA_DATE, index: 0 },
       { type: HomeComponentType.SCHEDULE_TODAY, index: 0 },
       { type: HomeComponentType.SCHEDULE_NEXT, index: 0 },
+      { type: HomeComponentType.WEEKLY_SCHEDULE, index: 0 },
       { type: HomeComponentType.LINK, index: 0 },
       { type: HomeComponentType.LINK, index: 1 },
     ],
     areaDateComponent: [areaDateComponent],
     todayComponents: [todayComponent],
+    weeklyScheduleComponents: [weeklyScheduleComponents],
     nextComponents: [nextComponent],
     links,
   };
