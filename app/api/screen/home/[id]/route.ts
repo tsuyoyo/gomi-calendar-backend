@@ -43,7 +43,7 @@ const buildHomeTodayComponent = (
       };
     });
   return {
-    title: `今日のごみ収集\n(${areaCalendar.area.name})`,
+    title: `今日のごみ収集`,
     trashTypes,
   };
 };
