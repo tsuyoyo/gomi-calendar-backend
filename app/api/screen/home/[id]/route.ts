@@ -43,7 +43,7 @@ const buildHomeTodayComponent = (
       };
     });
   return {
-    title: `今日のごみ収集`,
+    title: `本日のごみ収集`,
     trashTypes,
   };
 };
