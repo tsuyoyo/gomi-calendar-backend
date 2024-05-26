@@ -9,6 +9,7 @@ export type HomeWeeklyScheduleTrashTypeInfo = {
 
 export type HomeWeeklyScheduleComponent = {
   title: string;
+  description: string;
   schedules: HomeWeeklyScheduleTrashTypeInfo[];
   calendarLink: LinkComponent;
 };

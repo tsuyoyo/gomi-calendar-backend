@@ -197,7 +197,6 @@ export async function GET(
       status: 403,
     });
   }
-
   return Response.json(buildHomeResponse(areaCalendar), {
     status: 200,
   });
