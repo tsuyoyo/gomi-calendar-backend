@@ -137,7 +137,7 @@ const buildWeeklyScheduleComponent = (
       '祝日は変更になる可能性があります。カレンダーで確認してください。',
     calendarLink: {
       title: 'カレンダーを開く',
-      url: refLinks.gomiTop,
+      url: refLinks.calendarTop,
       // areaCalendar.calendar,
     },
     schedules,
