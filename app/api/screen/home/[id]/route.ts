@@ -106,10 +106,10 @@ const buildWeeklyScheduleComponent = (
         type,
         name: displayInfo.type.displayName,
         schedule: displayInfo.schedule,
+        guideUrl: getLinkByTrashType(type),
       }
     );
   };
-
   const schedules: HomeWeeklyScheduleTrashTypeInfo[] = [
     buildTypeSchedule(
       TrashType.BURNABLE,

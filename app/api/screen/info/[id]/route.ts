@@ -1,6 +1,6 @@
-import { InfoComponentType } from '../../data/screen/info/InfoComponentType';
-import { InfoResponse } from '../../data/screen/info/InfoResponse';
-import { refLinks } from '../refLinks';
+import { InfoComponentType } from '../../../data/screen/info/InfoComponentType';
+import { InfoResponse } from '../../../data/screen/info/InfoResponse';
+import { refLinks } from '../../refLinks';
 
 const buildInfoResponse = (): InfoResponse => {
   return {
