@@ -27,11 +27,11 @@ export const buildResponseTrashTypeData = (
       case TrashType.BURNABLE:
         return '燃えるごみ';
       case TrashType.HARMFUL:
-        return '危険物';
+        return '有害ごみ';
       case TrashType.INCOMBUSTIBLE:
         return '燃えないごみ';
       case TrashType.RECYCLABLE:
-        return '再利用可能ごみ';
+        return '資源物';
     }
   };
   return {

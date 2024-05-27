@@ -2,13 +2,13 @@ import { TrashType } from '../data/TrashType';
 
 const DOMAIN = 'https://www.city.narashino.lg.jp';
 const REF_BASE = `${DOMAIN}/material/files/group/35`;
-const KURASHI_GOMI_BASE = `${DOMAIN}/kurashi/gomi`;
+const KURASHI_GOMI_BASE = `${DOMAIN}/soshiki/kurin_suishin/gyomu/gomi/gomi/wakekata.html`;
 
 export const refLinks = {
-  burnable: `${REF_BASE}/R6dashikataguidebook_02.pdf`,
-  incombustible: `${REF_BASE}/R6dashikataguidebook_03.pdf`,
-  recyclable: `${REF_BASE}/R6dashikataguidebook_04.pdf`,
-  harmful: `${REF_BASE}/R6dashikataguidebook_05.pdf`,
+  burnable: `${REF_BASE}#h_idx_iw_flex_1_2`,
+  incombustible: `${REF_BASE}#h_idx_iw_flex_1_4`,
+  recyclable: `${REF_BASE}#h_idx_iw_flex_1_7`,
+  harmful: `${REF_BASE}#h_idx_iw_flex_1_8`,
   narashinoCityTop: `${DOMAIN}/index.html`,
   gomiTop: `${KURASHI_GOMI_BASE}/index.html`,
 };
