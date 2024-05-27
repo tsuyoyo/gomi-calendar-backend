@@ -20,7 +20,7 @@ import { buildResponseDateData } from '../../../date/buildResponseDateData';
 import { getDateInJst } from '../../../date/getDateInJst';
 import { getNextDayForType } from '../../../schedule/[id]/next/[type]/getNextDayForType';
 import { getTrashCollectionTypes } from '../../../schedule/[id]/today/getTrashCollectionTypes';
-import { getLinkByTrashType } from '../../refLinks';
+import { getLinkByTrashType, refLinks } from '../../refLinks';
 
 const buildHomeTodayComponent = (
   areaCalendar: CalendarEntry,
@@ -137,7 +137,8 @@ const buildWeeklyScheduleComponent = (
       '祝日は変更になる可能性があります。カレンダーで確認してください。',
     calendarLink: {
       title: 'カレンダーを開く',
-      url: areaCalendar.calendar,
+      url: refLinks.gomiTop,
+      // areaCalendar.calendar,
     },
     schedules,
   };

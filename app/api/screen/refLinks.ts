@@ -11,6 +11,7 @@ export const refLinks = {
   harmful: `${REF_BASE}#h_idx_iw_flex_1_8`,
   narashinoCityTop: `${DOMAIN}/index.html`,
   gomiTop: `${KURASHI_GOMI_BASE}/index.html`,
+  calendarTop: `${KURASHI_GOMI_BASE}/gomi/r6calendar.html`,
 };
 
 export const getLinkByTrashType = (type: TrashType) => {
