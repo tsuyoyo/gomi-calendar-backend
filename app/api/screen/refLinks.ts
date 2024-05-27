@@ -1,8 +1,8 @@
 import { TrashType } from '../data/TrashType';
 
 const DOMAIN = 'https://www.city.narashino.lg.jp';
-const REF_BASE = `${DOMAIN}/material/files/group/35`;
-const KURASHI_GOMI_BASE = `${DOMAIN}/soshiki/kurin_suishin/gyomu/gomi/gomi/wakekata.html`;
+const REF_BASE = `${DOMAIN}/soshiki/kurin_suishin/gyomu/gomi/gomi/wakekata.html`;
+const KURASHI_GOMI_BASE = `${DOMAIN}/kurashi/gomi`;
 
 export const refLinks = {
   burnable: `${REF_BASE}#h_idx_iw_flex_1_2`,
