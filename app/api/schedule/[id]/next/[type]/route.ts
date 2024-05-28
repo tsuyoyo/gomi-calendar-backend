@@ -1,3 +1,4 @@
+import { headers } from 'next/headers';
 import {
   buildResponseTrashTypeData,
   fromTrashTypeString,
@@ -8,7 +9,7 @@ import { getDateInJst } from '../../../../date/getDateInJst';
 import { getNextDayForType } from './getNextDayForType';
 
 export async function GET(
-  _request: Request,
+  request: Request,
   { params }: { params: { id: string; type: string } },
 ) {
   const trashType = fromTrashTypeString(params.type);
@@ -39,9 +40,10 @@ export async function GET(
       type: params.type,
     });
   }
+  const locale = request.headers.get('locale');
   return Response.json({
     id: params.id,
-    type: buildResponseTrashTypeData(trashType),
+    type: buildResponseTrashTypeData(trashType, locale),
     nextDay: buildResponseDateData(nextDayForTheType),
   });
 }

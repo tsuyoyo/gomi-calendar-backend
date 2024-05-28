@@ -1,3 +1,5 @@
+import { getStringResource } from '../resources/strings';
+
 export enum TrashType {
   BURNABLE = 'burnable',
   INCOMBUSTIBLE = 'incombustible',
@@ -21,17 +23,18 @@ export type TrashTypeDisplayInfo = {
 
 export const buildResponseTrashTypeData = (
   type: TrashType,
+  locale: string | null,
 ): TrashTypeDisplayInfo => {
   const getDisplayName = (type: TrashType) => {
     switch (type) {
       case TrashType.BURNABLE:
-        return '燃えるごみ';
+        return getStringResource('burnable-trash', locale);
       case TrashType.HARMFUL:
-        return '有害ごみ';
+        return getStringResource('harmful-trash', locale);
       case TrashType.INCOMBUSTIBLE:
-        return '燃えないごみ';
+        return getStringResource('incombustible-trash', locale);
       case TrashType.RECYCLABLE:
-        return '資源物';
+        return getStringResource('recyclable-trash', locale);
     }
   };
   return {

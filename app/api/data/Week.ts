@@ -1,5 +1,15 @@
 export const daysOfWeek = ['日', '月', '火', '水', '木', '金', '土'];
 
+export const daysOfWeekEn = [
+  'Sun',
+  'Mon',
+  'Tue',
+  'Wed',
+  'Thu',
+  'Fri',
+  'Sat',
+];
+
 export enum Week {
   Sunday = 0,
   Monday = 1,

@@ -8,7 +8,7 @@ import { getDateInJst } from '../../../date/getDateInJst';
 import { getNextDayForType } from './[type]/getNextDayForType';
 
 export async function GET(
-  _request: Request,
+  request: Request,
   { params }: { params: { id: string } },
 ) {
   const schedule = getCalendarSource().find(
@@ -30,8 +30,9 @@ export async function GET(
         today.getMonth() + 1,
         today.getDate(),
       );
+      const locale = request.headers.get('locale');
       return {
-        type: buildResponseTrashTypeData(type),
+        type: buildResponseTrashTypeData(type, locale),
         nextDay:
           nextDay !== null ? buildResponseDateData(nextDay) : null,
       };

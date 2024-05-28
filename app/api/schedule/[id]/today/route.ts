@@ -4,7 +4,7 @@ import { getDateInJst } from '../../../date/getDateInJst';
 import { getTrashCollectionTypes } from './getTrashCollectionTypes';
 
 export async function GET(
-  _request: Request,
+  request: Request,
   { params }: { params: { id: string } },
 ) {
   const id = params.id;
@@ -18,12 +18,13 @@ export async function GET(
   }
 
   const today = getDateInJst();
+  const locale = request.headers.get('locale');
   return Response.json({
     data: getTrashCollectionTypes(
       areaCalendar,
       today.getFullYear(),
       today.getMonth() + 1,
       today.getDate(),
-    ).map((t) => buildResponseTrashTypeData(t)),
+    ).map((t) => buildResponseTrashTypeData(t, locale)),
   });
 }

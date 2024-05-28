@@ -7,12 +7,6 @@ export type TrashSchedule = {
 
   // It should have one ore more values.
   days: Week[];
-
-  // Formatted text to be shown on the frontend side.
-  displayInfo?: {
-    type: TrashTypeDisplayInfo;
-    schedule: string;
-  };
 };
 
 export type Area = {
