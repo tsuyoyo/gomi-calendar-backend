@@ -115,7 +115,6 @@ const buildWeeklyScheduleComponent = (
       name: buildResponseTrashTypeData(type, locale).displayName,
       schedule: buildDisplayScheduleText(trashSchedule, locale),
       guideUrl: getLinkByTrashType(type),
-      calendar: areaCalendar,
     };
   };
   const schedules: HomeWeeklyScheduleTrashTypeInfo[] = [
@@ -145,6 +144,7 @@ const buildWeeklyScheduleComponent = (
       // areaCalendar.calendar,
     },
     schedules,
+    calendar: areaCalendar,
   };
 };
 
