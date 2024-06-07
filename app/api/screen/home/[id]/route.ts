@@ -3,6 +3,7 @@ import {
   CalendarEntry,
   TrashSchedule,
 } from '../../../data/CalendarEntry';
+import { Reminder } from '../../../data/Reminder';
 import {
   TrashType,
   buildResponseTrashTypeData,
@@ -148,6 +149,48 @@ const buildWeeklyScheduleComponent = (
   };
 };
 
+const buildReminders = (
+  schedule: CalendarEntry,
+  locale: string | null,
+): Reminder[] => {
+  const nextDays = Object.values(TrashType).map((type) => {
+    const today = getDateInJst();
+    return {
+      type,
+      nextDay: getNextDayForType(
+        schedule,
+        type,
+        today.getFullYear(),
+        today.getMonth() + 1,
+        today.getDate(),
+      ),
+    };
+  });
+
+  const reminders = Array<Reminder>();
+  nextDays.forEach(({ type, nextDay }) => {
+    if (nextDay === null) {
+      return;
+    }
+    const displayTrashType = buildResponseTrashTypeData(
+      type,
+      locale,
+    ).displayName;
+    reminders.push({
+      type,
+      title:
+        locale === 'en'
+          ? `${displayTrashType} is collected today.`
+          : `今日は${displayTrashType}の収集日です。`,
+      message: getStringResource('reminder-message', locale),
+      year: nextDay.getFullYear(),
+      month: nextDay.getMonth() + 1,
+      date: nextDay.getDate(),
+    });
+  });
+  return reminders;
+};
+
 const buildHomeResponse = (
   areaCalendar: CalendarEntry,
   locale: string | null,
@@ -210,6 +253,7 @@ const buildHomeResponse = (
     weeklyScheduleComponents: [weeklyScheduleComponents],
     nextComponents: [nextComponent],
     links,
+    reminders: buildReminders(areaCalendar, locale),
   };
 };
 

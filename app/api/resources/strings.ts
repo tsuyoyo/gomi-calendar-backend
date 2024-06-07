@@ -63,6 +63,13 @@ const strings = new Map<string, StringEntry>([
       en: 'Open the calendar (city web page)',
     },
   ],
+  [
+    'reminder-message',
+    {
+      ja: '地域で決められた時間までに出しましょう。',
+      en: 'Put them the place by the time when a truck comes.',
+    },
+  ],
 ]);
 
 export const getStringResource = (
