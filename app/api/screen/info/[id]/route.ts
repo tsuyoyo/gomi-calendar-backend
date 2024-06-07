@@ -5,6 +5,7 @@ import { refLinks } from '../../refLinks';
 const buildInfoResponse = (locale: string | null): InfoResponse => {
   return {
     layout: [
+      { type: InfoComponentType.REMINDER_CONFIG, index: 0 },
       { type: InfoComponentType.AREA_CONFIG, index: 0 },
       { type: InfoComponentType.LINK, index: 0 },
       { type: InfoComponentType.LINK, index: 1 },
