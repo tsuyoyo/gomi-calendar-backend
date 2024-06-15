@@ -235,6 +235,7 @@ const buildHomeResponse = (
       locale === 'en'
         ? [
             { type: HomeComponentType.AREA_DATE, index: 0 },
+            { type: HomeComponentType.REMINDER_CONFIG, index: 0 },
             { type: HomeComponentType.SCHEDULE_TODAY, index: 0 },
             { type: HomeComponentType.SCHEDULE_NEXT, index: 0 },
             { type: HomeComponentType.WEEKLY_SCHEDULE, index: 0 },
@@ -242,6 +243,7 @@ const buildHomeResponse = (
           ]
         : [
             { type: HomeComponentType.AREA_DATE, index: 0 },
+            { type: HomeComponentType.REMINDER_CONFIG, index: 0 },
             { type: HomeComponentType.SCHEDULE_TODAY, index: 0 },
             { type: HomeComponentType.SCHEDULE_NEXT, index: 0 },
             { type: HomeComponentType.WEEKLY_SCHEDULE, index: 0 },
