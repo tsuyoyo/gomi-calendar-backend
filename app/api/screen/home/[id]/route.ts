@@ -1,9 +1,10 @@
 import { link } from 'fs';
+import { NextRequest } from 'next/server';
 import {
   CalendarEntry,
   TrashSchedule,
 } from '../../../data/CalendarEntry';
-import { Reminder } from '../../../data/Reminder';
+import { RemindDay, Reminder } from '../../../data/Reminder';
 import {
   TrashType,
   buildResponseTrashTypeData,
@@ -24,6 +25,7 @@ import { buildResponseDateData } from '../../../date/buildResponseDateData';
 import { getDateInJst } from '../../../date/getDateInJst';
 import { getStringResource } from '../../../resources/strings';
 import { getNextDayForType } from '../../../schedule/[id]/next/[type]/getNextDayForType';
+import { buildReminders } from '../../../schedule/[id]/reminder/buildReminders';
 import { getTrashCollectionTypes } from '../../../schedule/[id]/today/getTrashCollectionTypes';
 import { getLinkByTrashType, refLinks } from '../../refLinks';
 
@@ -149,51 +151,10 @@ const buildWeeklyScheduleComponent = (
   };
 };
 
-const buildReminders = (
-  schedule: CalendarEntry,
-  locale: string | null,
-): Reminder[] => {
-  const nextDays = Object.values(TrashType).map((type) => {
-    const today = getDateInJst();
-    return {
-      type,
-      nextDay: getNextDayForType(
-        schedule,
-        type,
-        today.getFullYear(),
-        today.getMonth() + 1,
-        today.getDate(),
-      ),
-    };
-  });
-
-  const reminders = Array<Reminder>();
-  nextDays.forEach(({ type, nextDay }) => {
-    if (nextDay === null) {
-      return;
-    }
-    const displayTrashType = buildResponseTrashTypeData(
-      type,
-      locale,
-    ).displayName;
-    reminders.push({
-      type,
-      title:
-        locale === 'en'
-          ? `${displayTrashType} is collected today.`
-          : `今日は${displayTrashType}の収集日です。`,
-      message: getStringResource('reminder-message', locale),
-      year: nextDay.getFullYear(),
-      month: nextDay.getMonth() + 1,
-      date: nextDay.getDate(),
-    });
-  });
-  return reminders;
-};
-
 const buildHomeResponse = (
   areaCalendar: CalendarEntry,
   locale: string | null,
+  remindDay: RemindDay,
 ): HomeResponse => {
   const today = getDateInJst();
   const areaDateComponent: HomeAreaDateComponent = {
@@ -255,12 +216,12 @@ const buildHomeResponse = (
     weeklyScheduleComponents: [weeklyScheduleComponents],
     nextComponents: [nextComponent],
     links,
-    reminders: buildReminders(areaCalendar, locale),
+    reminders: buildReminders(areaCalendar, locale, remindDay),
   };
 };
 
 export async function GET(
-  request: Request,
+  request: NextRequest,
   { params }: { params: { id: string } },
 ) {
   const id = params.id;
@@ -273,7 +234,14 @@ export async function GET(
     });
   }
   const locale = request.headers.get('locale');
-  return Response.json(buildHomeResponse(areaCalendar, locale), {
-    status: 200,
-  });
+  const remindDay =
+    request.nextUrl.searchParams.get('remind-day') ??
+    'day-on-the-day';
+
+  return Response.json(
+    buildHomeResponse(areaCalendar, locale, remindDay as RemindDay),
+    {
+      status: 200,
+    },
+  );
 }
