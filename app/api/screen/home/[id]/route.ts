@@ -1,4 +1,3 @@
-import { link } from 'fs';
 import { NextRequest } from 'next/server';
 import {
   CalendarEntry,
@@ -216,7 +215,6 @@ const buildHomeResponse = (
     weeklyScheduleComponents: [weeklyScheduleComponents],
     nextComponents: [nextComponent],
     links,
-    reminders: buildReminders(areaCalendar, locale, remindDay),
   };
 };
 

@@ -14,6 +14,4 @@ export type HomeResponse = {
   nextComponents: HomeNextComponent[];
   weeklyScheduleComponents: HomeWeeklyScheduleComponent[];
   links: LinkComponent[];
-
-  reminders: Reminder[];
 };
