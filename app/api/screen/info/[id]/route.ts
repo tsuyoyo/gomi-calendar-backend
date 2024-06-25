@@ -9,6 +9,7 @@ const buildInfoResponse = (locale: string | null): InfoResponse => {
       { type: InfoComponentType.AREA_CONFIG, index: 0 },
       { type: InfoComponentType.LINK, index: 0 },
       { type: InfoComponentType.LINK, index: 1 },
+      { type: InfoComponentType.LINK, index: 2 },
       { type: InfoComponentType.OSS_LICENSE, index: 0 },
     ],
     links:
@@ -22,6 +23,10 @@ const buildInfoResponse = (locale: string | null): InfoResponse => {
               title: 'Garbage, Recycling (Narashino City Web page)',
               url: 'https://translation2.j-server.com/LUCNRSNC/ns/tl.cgi/https://www.city.narashino.lg.jp/kurashi/gomi/index.html?SLANG=ja&TLANG=en&XMODE=0&XPARAM=number-search-input,&XCHARSET=utf-8&XPORG=,&XJSID=0',
             },
+            {
+              title: 'Privacy Policy',
+              url: 'https://gomi-calendar-app.firebaseapp.com/privacy-policy.html',
+            },
           ]
         : [
             {
@@ -31,6 +36,10 @@ const buildInfoResponse = (locale: string | null): InfoResponse => {
             {
               title: '習志野市 "ごみ・リサイクル" トップ',
               url: refLinks.gomiTop,
+            },
+            {
+              title: 'プライバシーポリシー',
+              url: 'https://gomi-calendar-app.firebaseapp.com/privacy-policy.html',
             },
           ],
   };
